@@ -21,7 +21,8 @@ namespace Final_Project.Sturucture.Models
         public Order()
         {
             OrderCounter++;
-            _no=OrderCounter;
+            OrderCounter=_no;
+            Date = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             OrderItems = new List<OrderItem>();
         }
         public void Sell(string name, int count)
@@ -36,5 +37,6 @@ namespace Final_Project.Sturucture.Models
             orderItem.Count = count;
             this._totalAmount+= count * orderItem.MenuItem.Price;
         }
+       
     }
 }

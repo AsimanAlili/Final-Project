@@ -17,10 +17,23 @@ namespace Final_Project.Sturucture.Models
             }
             set
             {
-                if (value > 0)
-                   this._count =value ;
-                throw new OrderItemModelInvalidException("Count", "Count  can not be less than zero!");
+                if (value < 0)
+                {
+                    throw new OrderItemModelInvalidException("Count", "Count  can not be less than zero!");
+                }
+                else
+                {
+                    this._count = value;
+                }
+                 
+               
             }
+        }
+
+        public OrderItem(MenuItem menuItem,int count)
+        {
+            this.MenuItem = menuItem;
+            this.Count = count;
         }
     }
 }

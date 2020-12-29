@@ -34,9 +34,15 @@ namespace Final_Project.Sturucture.Models
             }
             set
             {
-                if (value > 0)
-                    value = _price;
-                throw new MenuModelInvalidException("Price", "Price can not be less than zero!");
+                if (value < 0)
+                {
+                    throw new MenuModelInvalidException("Price", "Price can not be less than zero!");
+                }
+                else
+                {
+                    _price = value;
+                }
+               
             }
         }
         public Category Category { get; set; }

@@ -10,10 +10,10 @@ namespace Final_Project.Sturucture.NewFolder
     {
         public  MenuItem MenuItem { get; set; }
         public List<Order> Orders { get; set; }
-        public void AddOrder(List<OrderItem> orderItems);
+        public void AddOrder(string no, int coun);
         public void RemoveOrder(int orderNo);
         public void RemoveItem(string menuItemNo);
-        public List<Order> GetOrdersByDatesInterval(DateTime firstDate, DateTime lastDate);
+        public List<Order> GetOrdersByDatesInterval(DateTime fromDate, DateTime toDate);
         public List<Order> GetOrderByDate(DateTime date);
         public List<Order> GetOrdersByPriceInterval(double firstPrice, double secondPrice);
         public void GetOrderByNo(int no);
@@ -22,8 +22,8 @@ namespace Final_Project.Sturucture.NewFolder
         public List<MenuItem> GetMenuItemsCategory(Category category);
         public List<MenuItem> GetMenuItemsPriceInterval(double firstPrice, double secondPrice);
         public List<MenuItem> Search(string searchStr);
-        public List<MenuItem> GetMenuItems();
-        public List<Order> GetOrders();
+        public void GetMenuItems();
+        public void GetOrders();
 
 
     }
